@@ -1,3 +1,3 @@
-import { CapivaraModel } from "./capivara-model";
+import CapivaraModel from "./capivara.model";
 
 export { CapivaraModel };

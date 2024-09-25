@@ -15,9 +15,21 @@ const capivaraSchema = z.object({
       required_error: "O peso é obrigatório.",
     })
     .positive("O peso deve ser um número positivo."),
-  statusSaude: z.enum(["Saudável", "Necessita de cuidados"], {
-    required_error: "O status de saúde é obrigatório.",
-  }),
+  statusSaude: z.enum(
+    [
+      "Saudável",
+      "Necessita de cuidados",
+      "Doente",
+      "Em recuperação",
+      "Ferido",
+      "Em observação",
+      "Grávida",
+      "Recém-nascido",
+    ],
+    {
+      required_error: "O status de saúde é obrigatório.",
+    }
+  ),
   habitat: z.string({
     required_error: "O habitat é obrigatório.",
   }),
