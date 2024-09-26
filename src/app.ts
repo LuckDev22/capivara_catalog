@@ -11,9 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 conectMongoDB();
-// ROTAS PÚBLICAS
 
-// ROTAS PRIVADAS
 app.use("/api", capivaraRouter);
 // ERROS
 app.use(globalErrors);

@@ -16,7 +16,7 @@ const createCapivaraService = async (data: any): Promise<any> => {
         `The ${duplicatedField}: "${duplicatedValue}" already exists.`
       );
     } else {
-      throw new AppError("An error occurred while creating the Capivara.");
+      throw new AppError("An error occurred while creating the Capybara.");
     }
   }
 };

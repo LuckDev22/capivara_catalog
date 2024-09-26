@@ -1,3 +1,11 @@
 import createCapivaraController from "./createCapivara.controller";
+import getCapivaraController from "./getCapivara.controller";
+import getCapivaraByIdController from "./getCapivaraById.controller";
+import deleteCapivaraController from "./deleteCapivara.controller";
 
-export { createCapivaraController };
+export {
+  createCapivaraController,
+  getCapivaraController,
+  getCapivaraByIdController,
+  deleteCapivaraController,
+};

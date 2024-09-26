@@ -8,7 +8,7 @@ const getCapivaraService = async (): Promise<any> => {
     return capivara;
   } catch (err: any) {
     console.log(err);
-    throw new AppError("An error occurred while listing the capivara.");
+    throw new AppError("An error occurred while listing the Capybara.");
   }
 };
 
