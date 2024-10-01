@@ -1,7 +1,10 @@
 import { AppError } from "../../errors";
+import { tCapivara, tCreateCapivara } from "../../interfaces";
 import CapivaraModel from "../../models/capivara.model";
 
-const createCapivaraService = async (data: any): Promise<any> => {
+const createCapivaraService = async (
+  data: tCreateCapivara
+): Promise<tCapivara> => {
   try {
     const capivara = await CapivaraModel.create(data);
 

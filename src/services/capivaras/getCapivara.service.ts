@@ -1,7 +1,8 @@
 import { AppError } from "../../errors";
+import { tCapivaraArray } from "../../interfaces";
 import CapivaraModel from "../../models/capivara.model";
 
-const getCapivaraService = async (): Promise<any> => {
+const getCapivaraService = async (): Promise<tCapivaraArray> => {
   try {
     const capivara = await CapivaraModel.find();
 
