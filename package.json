@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "swagger": "node swagger.js",
     "dev": "tsx watch src/server.ts",
     "build": "tsc"
   },

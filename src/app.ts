@@ -9,7 +9,11 @@ import swaggerDocs from "./swagger.json";
 
 const app = express();
 
-const Origins = ["http://localhost:8888", "http://localhost:3000", ""];
+const Origins = [
+  "http://localhost:8888",
+  "http://localhost:3000",
+  "https://capivara-catalog.vercel.app/",
+];
 
 app.use(
   cors({
