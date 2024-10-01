@@ -7,10 +7,10 @@ O **Capivara Catalog API** é um sistema desenvolvido para auxiliar na cataloga�
 ## Funcionalidades
 
 - **Cadastro de Capivara**: Permite criar um novo registro de capivara com todos os detalhes (nome, idade, peso, habitat, dieta, etc).
-- **Atualização de Capivara**: Permite a atualização dos detalhes de uma capivara existente.
-- **Exclusão de Capivara**: Permite remover um registro de capivara do sistema.
 - **Listagem de Capivaras**: Permite listar todas as capivaras cadastradas.
 - **Consulta de Capivara**: Permite buscar uma capivara específica por seu ID.
+- **Atualização de Capivara**: Permite a atualização dos detalhes de uma capivara existente.
+- **Exclusão de Capivara**: Permite remover um registro de capivara do sistema.
 
 ## Tecnologias Utilizadas
 
@@ -20,7 +20,7 @@ O **Capivara Catalog API** é um sistema desenvolvido para auxiliar na cataloga�
 - **Zod**: Biblioteca de validação de dados.
 - **TypeScript**: Linguagem utilizada para trazer tipagem estática ao JavaScript.
 - **Docker** : Para gerenciamento de containers, facilitando o deploy em produção.
-- **MySQL**: Banco de dados relacional (pode ser substituído dependendo das necessidades do projeto).
+- **MongoDB**: Banco de dados no-relacional (pode ser substituído dependendo das necessidades do projeto).
 
 ## Instalação
 
@@ -29,8 +29,6 @@ O **Capivara Catalog API** é um sistema desenvolvido para auxiliar na cataloga�
 ```bash
 
 git clone https://github.com/seu-usuario/capivara-catalog.git
-cd capivara-catalog
-
 
 2. Instale as dependências:
 
@@ -52,3 +50,5 @@ npm run dev
 
 5. Acessar a API:
 A aplicação estará rodando na URL: http://localhost:8888.
+
+B todos os testes estão criados no arquivo capivaraCatalog.json

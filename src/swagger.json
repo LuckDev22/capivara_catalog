@@ -1,0 +1,303 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Capivara Catalog API",
+    "description": "API para o gerenciamento de capivaras",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Lucas Ribeiro"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8888"
+      }
+    ]
+  },
+
+
+
+  "paths": {
+    "/capivaras": {
+      "get": {
+        "summary": "Retorna uma lista de capivaras",
+        "tags": ["Capivaras"],
+        "responses": {
+          "200": {
+            "description": "Lista de capivaras retornada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "nome": {
+                        "type": "string",
+                        "description": "Nome da capivara"
+                      },
+                      "idade": {
+                        "type": "integer",
+                        "description": "Idade da capivara"
+                      },
+                      "peso": {
+                        "type": "number",
+                        "description": "Peso da capivara"
+                      },
+                      "statusSaude": {
+                        "type": "string",
+                        "description": "Status de saúde da capivara"
+                      },
+                      "habitat": {
+                        "type": "string",
+                        "description": "Habitat da capivara"
+                      },
+                      "comportamento": {
+                        "type": "string",
+                        "description": "Comportamento observado"
+                      },
+                      "dieta": {
+                        "type": "string",
+                        "description": "Dieta preferida"
+                      },
+                      "observacoes": {
+                        "type": "string",
+                        "description": "Observações adicionais"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Cria uma nova capivara",
+        "tags": ["Capivaras"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "description": "Nome da capivara",
+                    "example": "Capivara Bigodes"
+                  },
+                  "idade": {
+                    "type": "integer",
+                    "description": "Idade da capivara",
+                    "example": 5
+                  },
+                  "peso": {
+                    "type": "number",
+                    "description": "Peso da capivara em kg",
+                    "example": 55.5
+                  },
+                  "statusSaude": {
+                    "type": "string",
+                    "description": "Status de saúde",
+                    "example": "Saudável"
+                  },
+                  "habitat": {
+                    "type": "string",
+                    "description": "Habitat natural da capivara",
+                    "example": "Lagoa Sul"
+                  },
+                  "comportamento": {
+                    "type": "string",
+                    "description": "Comportamento da capivara",
+                    "example": "Muito ativa, gosta de nadar pela manhã."
+                  },
+                  "dieta": {
+                    "type": "string",
+                    "description": "Dieta preferida",
+                    "example": "Frutas e pasto fresco"
+                  },
+                  "observacoes": {
+                    "type": "string",
+                    "description": "Outras observações",
+                    "example": "Gosta de socializar com outras capivaras."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Capivara criada com sucesso"
+          },
+          "400": {
+            "description": "Erro de validação"
+          }
+        }
+      }
+    },
+    "/capivaras/{id}": {
+      "get": {
+        "summary": "Retorna os detalhes de uma capivara específica",
+        "tags": ["Capivaras"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID da capivara"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Detalhes da capivara",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "nome": {
+                      "type": "string",
+                      "description": "Nome da capivara"
+                    },
+                    "idade": {
+                      "type": "integer",
+                      "description": "Idade da capivara"
+                    },
+                    "peso": {
+                      "type": "number",
+                      "description": "Peso da capivara"
+                    },
+                    "statusSaude": {
+                      "type": "string",
+                      "description": "Status de saúde da capivara"
+                    },
+                    "habitat": {
+                      "type": "string",
+                      "description": "Habitat da capivara"
+                    },
+                    "comportamento": {
+                      "type": "string",
+                      "description": "Comportamento observado"
+                    },
+                    "dieta": {
+                      "type": "string",
+                      "description": "Dieta preferida"
+                    },
+                    "observacoes": {
+                      "type": "string",
+                      "description": "Observações adicionais"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Capivara não encontrada"
+          }
+        }
+      },
+      "put": {
+        "summary": "Atualiza uma capivara específica",
+        "tags": ["Capivaras"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID da capivara"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "description": "Nome da capivara"
+                  },
+                  "idade": {
+                    "type": "integer",
+                    "description": "Idade da capivara"
+                  },
+                  "peso": {
+                    "type": "number",
+                    "description": "Peso da capivara"
+                  },
+                  "statusSaude": {
+                    "type": "string",
+                    "description": "Status de saúde"
+                  },
+                  "habitat": {
+                    "type": "string",
+                    "description": "Habitat natural"
+                  },
+                  "comportamento": {
+                    "type": "string",
+                    "description": "Comportamento"
+                  },
+                  "dieta": {
+                    "type": "string",
+                    "description": "Dieta preferida"
+                  },
+                  "observacoes": {
+                    "type": "string",
+                    "description": "Outras observações"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Capivara atualizada com sucesso"
+          },
+          "404": {
+            "description": "Capivara não encontrada"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Exclui uma capivara específica",
+        "tags": ["Capivaras"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID da capivara"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Capivara excluída com sucesso"
+          },
+          "404": {
+            "description": "Capivara não encontrada"
+          }
+        }
+      }
+    }
+  },
+  "components": {},
+  "tags": [
+    {
+      "name": "Capivaras",
+      "description": "Operações relacionadas a capivaras"
+    }
+  ]
+}
