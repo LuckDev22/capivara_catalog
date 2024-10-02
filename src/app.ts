@@ -11,7 +11,6 @@ const app = express();
 
 const Origins = [
   "http://localhost:8888",
-  "http://localhost:3000",
   "http://localhost:5173",
   "https://capivara-catalog.vercel.app/",
   "https://capivara-catalago-web-site.vercel.app/",
