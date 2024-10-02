@@ -36,9 +36,11 @@ const capivaraSchema = z.object({
   comportamento: z.string({
     required_error: "O comportamento é obrigatório.",
   }),
-  dieta: z.string({
-    required_error: "A dieta é obrigatória.",
-  }),
+  dieta: z
+    .string({
+      required_error: "A dieta é obrigatória.",
+    })
+    .optional(),
   observacoes: z.string().optional().default("Nenhuma observação"),
   __v: z.string(),
 });

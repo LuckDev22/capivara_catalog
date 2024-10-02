@@ -4,6 +4,7 @@ const CapivaraSchema = new Schema({
   nome: {
     type: String,
     required: true,
+    unique: true,
   },
   idade: {
     type: Number,
@@ -16,6 +17,16 @@ const CapivaraSchema = new Schema({
   statusSaude: {
     type: String,
     required: true,
+    enum: [
+      "Saudável",
+      "Necessita de cuidados",
+      "Doente",
+      "Em recuperação",
+      "Ferido",
+      "Em observação",
+      "Grávida",
+      "Recém-nascido",
+    ],
   },
   habitat: {
     type: String,
@@ -27,7 +38,7 @@ const CapivaraSchema = new Schema({
   },
   dieta: {
     type: String,
-    required: true,
+    required: false,
   },
   observacoes: {
     type: String,
